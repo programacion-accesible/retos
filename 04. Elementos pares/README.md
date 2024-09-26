@@ -3,7 +3,7 @@ Este reto fue tomado del repositorio [interview-challenges](https://github.com/g
 Créditos a sus creadores
 
 ## Enunciado
-Dada una lista de elementos (array), crear una funcion que retorne una nueva lista con solo los elementos que aparecen una cantidad pares de veces.
+Dada una lista de elementos (array), crear una función que retorne una nueva lista con solo los elementos que aparecen una cantidad pares de veces.
 
 ### Ejemplo de entrada y salida
 ```código
