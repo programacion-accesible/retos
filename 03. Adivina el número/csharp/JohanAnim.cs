@@ -1,6 +1,6 @@
 ﻿/* 
 Solución creada por el usuario JohanAnim.
-Para el reto de Adivina el número que es el número tres en esta ocación con el lenguaje de programación C#.
+Para el reto de Adivina el número que es el 3, en esta ocación con el lenguaje de programación C#.
 */
 
 using System;
