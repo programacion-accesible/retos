@@ -24,3 +24,14 @@ Los retos pueden ser de tu invención o pueden ser obtenidos de algún sitio en 
 - Un posible ejemplo de la salida del programa que ayude a aclarar cómo se resuelve el problema.
 - La forma de proponer la solución.
 
+## Normas para hacer commits
+
+Debes hacer los commits en estilo imperativo, es dcir, el mensaje de tu commit completará la frase &laquo;Este commit...&raquo;. Además, recuerda que no debes poner el punto final.
+
+### Un ejemplo
+
+Imagina que en el mensaje que se imprime en tu propia solución has escrito vurro (con v) o jente (con j). Una vez que lo corrijas y guardes el archivo un buen mensaje de commit podría ser:
+
+> Corrige faltas de ortografía en la salida del programa
+
+Como puedes observar, el mensaje empieza con un verbo en imperativo y no se ha escrito el punto final.
