@@ -13,7 +13,7 @@ def divide(dividendo,divisor):
 	resto=dividendo
 	# La división termina cuando el resto sea menor que el divisor
 	while resto>=divisor:
-		# Este algoritmo va de incrementa rel cociente y disminuir el resto
+		# Este algoritmo va de incrementar el cociente y disminuir el resto
 		# Lo que sumaremos al cociente parte de 1
 		sumarCociente=1
 		# Lo que restamos al resto parte del divisor
