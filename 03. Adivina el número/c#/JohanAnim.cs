@@ -1,11 +1,11 @@
 ﻿/* 
 Solución creada por el usuario JohanAnim.
-Para el reto de Adivina el número que es el 3, en esta ocación con el lenguaje de programación C#.
+Para el reto de Adivina el número que es el 3, en esta ocasión con el lenguaje de programación C#.
 */
 
 using System;
 
-// la clase de la logica del juego
+// la clase de la lógica del juego
 public class AdivinaMiNumero
 {
     private int numeroSecreto;
