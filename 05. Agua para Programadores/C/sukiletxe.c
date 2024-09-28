@@ -5,11 +5,11 @@
 // Con doubles haría falta redondear para quitar el .0 a todos los mensajes, cosa que no tengo claro cómo hacer, aunque es posible que simplemente un `(long long int) a` y manteniendo las cadenas de formatos exactamente igual aquello fuese bien.
 
 long long unsigned int llumin(long long unsigned int a, long long unsigned int b) {
-    a < b? a: b;
+    return a < b? a: b;
 }
 
 int main(void) {
-    unsigned long long n, botellas; // Vamos a ser puristas, utilizando estos enteros para todo. Con enteros más pequeños esto no iría, fallaría el último test. El unsigned no es importante, pero nos permite tener el doble de números, aunque son innecesarios según cómo nos los acotan en el ejercicio.
+    unsigned long long n, coste_minimo; // Vamos a ser puristas, utilizando estos enteros para todo. Con enteros más pequeños esto no iría, fallaría el último test. El unsigned no es importante, pero nos permite tener el doble de números, aunque son innecesarios según cómo nos los acotan en el ejercicio.
     int a, b; // Pero no tanto, no nos importa que los dólares no tengan signo, nos ahorraríamos solo un bit.
     printf("Ingrese la cantidad de litros (N): ");
     scanf("%llu", &n);
@@ -19,11 +19,11 @@ int main(void) {
     scanf("%d", &b);
     // Si las botellas no son divisibles por dos, devolvemos siempre la cuenta con las de un litro porque no se pueden mezclar.
     if (n % 2 != 0) {
-        botellas = a * n;
+        coste_minimo = a * n;
         } else {
             // Si no, calculamos el coste mínimo y lo devolvemos.
-            botellas = llumin(a*n, (b*n)/2);
+            coste_minimo = llumin(a*n, (b*n)/2);
         }
-    printf("El costo mínimo para comprar %llu botellas de agua es: %llu dólares\n", n, botellas);
+    printf("El costo mínimo para comprar %llu botellas de agua es: %llu dólares\n", n, coste_minimo);
 return 0;    
 }
