@@ -22,7 +22,7 @@ int main(void) {
         botellas = a * n;
         } else {
             // Si no, calculamos el coste mínimo y lo devolvemos.
-            botellas = llumin(a*n, b*n);
+            botellas = llumin(a*n, (b*n)/2);
         }
     printf("El costo mínimo para comprar %llu botellas de agua es: %llu dólares\n", n, botellas);
 return 0;    
