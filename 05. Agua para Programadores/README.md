@@ -1,4 +1,4 @@
-# **Agua para Programadores**
+﻿# **Agua para Programadores**
 
 Este reto ha sido una adaptación propia del original ubicado en la web [CodeForces](https://codeforces.com) donde hay retos de programación competitiva.
 
@@ -18,9 +18,9 @@ Su mochila es de la marca "Knaspack", muy conocida entre las personas aficionada
 Tu tarea es encontrar la cantidad mínima de dinero (dólares) que el grupo de amigos necesita para comprar exactamente **N** litros de agua en la tienda, dado que la botella de 1 litro cuesta **A** dólares y la de 2 litros cuesta **B** dólares.
 
 Los tres datos de entrada que recibe el programa son:
-- **N**: un entero, \( 1 \leq N \leq 10^{12} \)
-- **A**: un entero, \( 1 \leq A \leq 1000 \)
-- **B**: un entero, \( 1 \leq B \leq 1000 \)
+- **N**: un entero entre 1 y 10 elevado a 12 (ambos inclusive).
+- **A**: un entero entre 1 y 1000 (ambos inclusive).
+- **B**: un entero entre 1 y 1000 (ambos inclusive).
 
 ### Ejemplo de entrada y salida
 
@@ -42,10 +42,10 @@ El costo mínimo para comprar 10 litros de agua es: 10 dólares
 
 #### Ejemplo 3
 ```
-Ingrese la cantidad de litros (N): 1,000,000,000,000  
+Ingrese la cantidad de litros (N): 1000000000000  
 Ingrese el costo de la botella de 1 litro (A): 42  
 Ingrese el costo de la botella de 2 litros (B): 8  
-El costo mínimo para comprar 1,000,000,000,000 litros de agua es: 42,000,000,000,000 dólares
+El costo mínimo para comprar 1000000000000 litros de agua es: 42000000000000 dólares
 ```
 
 ## ¿Cómo participar?
