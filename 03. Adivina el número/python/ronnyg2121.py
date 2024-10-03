@@ -13,17 +13,17 @@ while True:
         print("Por favor no ingrese letras. ¡Solo se aceptan números!")
         continue
     if aleatorio < num:
-        print("El número introducido es menor.")
+        print("El número buscado es menor.")
         vidas -= 1
         print("Ahora tienes: " + str(vidas), "Vidas")
     elif aleatorio > num:
-        print("El número introducido es mayor")
+        print("El número buscado es mayor")
         vidas -= 1
         print("Ahora tienes: " + str(vidas), "Vidas.")
-    if num == aleatorio:
+    elif num == aleatorio:
         print("¡Felicitaciones! ¡Usted a ganado! \t Lo lograste cuando te quedaban" + str(vidas), "Vidas")
         break
-    elif vidas <= 0:
+    if vidas <= 0:
         print("¡No te quedan vidas!")
         print("¡Perdiste! el número aleatorio era: " + str(aleatorio))
         break
