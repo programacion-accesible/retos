@@ -12,14 +12,22 @@ if [[ $n =~ ^[0-9]+$ ]]; then  # se comprueba que el dato es un entero
                 if (( $n % 2 == 0 )); then # se comprueba que $n sea par para luego decidir si puede comprar botellas de 2 litros o de 1 litros
                     total_a=$(($n * $a)) # se multiplica litros por precio
                     total_b=$(($n * $b / 2)) # se multiplica litros por precios y se divide entre 2 da la cantidad de dinero al comprar botellas de dos litros
-                    if (( $total_b < $total_a )); then # comprueba si la cantidad de del precio de dos litros es menor que las de 1 litros
+                    if (( $total_b <= $total_a )); then # comprueba si la cantidad de del precio de dos litros es menor que las de 1 litros
                         echo "El costo mínimo para comprar $n litro de agua es: ${total_b}" # es la salida si el valor de las botellas de 2 litros de agua es menor 
+                    else
+                        echo "El costo mínimo para comprar $n litro de agua es: ${total_a}" # es la salida si el valor de las botellas de 1 litros de agua es menor y es un $n es par 
                     fi # cierra el if de que comprueba que precio es menor para el usuario
                 else
                     echo "El costo mínimo para comprar $n litro de agua es: $(($n * a))" # es la salida si $n no es par el usuario deve comprar botellas de 1 litros porque no se pueden mesclar
                 fi # se cierra el if que comprueba si $n es par
+            else
+                echo "Estimado el valor deve ser un entero >= 1 y <= 1000"
             fi # se cierra el if de las comprobaciones de $b
+        else
+            echo "Estimado el valor deve ser un entero >= 1 y <= 1000"
         fi # se cierra el if de las comprobaciones de $a
+    else
+        echo "Estimado el valor deve ser un entero >= 1 y <= 1000000000000 , es decir menor a un billón."
     fi  # se cierra el if de las comprobaciones de $n
 else
     echo "deves introducir un número entero"
