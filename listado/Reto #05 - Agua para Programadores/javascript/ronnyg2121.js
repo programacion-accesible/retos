@@ -1,8 +1,7 @@
 // Ejercicio para calcular la cantidad mínima de dinero necesario para comprar una cierta cantidad de litros de agua
 const readline = require('readline');
 
-
-// const calcularMinimo= (x, y) => (x <y) ? x : y;
+const calcularMinimo= (x, y) => (x <y) ? x : y;
 
 // Crear una promesa que envuelve readline.question
 const obtenerEntrada = (pregunta) => {
@@ -17,15 +16,16 @@ const obtenerEntrada = (pregunta) => {
 };
 
 const main = (cantidad, botella1, botella2) => {
-    let costo1 = botella1 * cantidad;
-    let costo2 = botella2 * cantidad;
-
-    if (cantidad % 2 == 0) {
-        console.info(`El precio mínimo para comprar ${cantidad} litros de agua es: ${costo1}`);
+    let costo = 0;
+    
+    if (cantidad%2!==0) {
+        costo = (botella1 * cantidad);
+        console.info(`El precio mínimo para comprar ${cantidad} litros de agua es: ${costo}`);
     } else {
-
-        console.info(`El precio mínimo para comprar ${cantidad} litros de agua es: ${costo2}`);
+        costo = calcularMinimo(botella1* cantidad, (botella2* cantidad) /2);
+        console.info(`El precio mínimo para comprar ${cantidad} litros de agua es: ${costo}`);
     }
+
     return;
 };
 
@@ -44,10 +44,3 @@ const ejecutar = async () => {
 
 // Ejecutar la función principal
 ejecutar();
-
-
-
-
-
-
-
