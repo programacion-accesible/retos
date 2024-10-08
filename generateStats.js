@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 const path = require('path');
 
@@ -10,6 +9,7 @@ function scanDir(dirPath, challenges = {}, languages = {}, total = 0, challengeN
         const fullPath = path.join(dirPath, file.name);
 
         if (file.isDirectory()) {
+            // Si es un directorio que contiene un reto
             if (file.name.includes("Reto #") && !challenges[file.name]) {
                 challenges[file.name] = 0;
                 challengeName = file.name;
@@ -20,6 +20,7 @@ function scanDir(dirPath, challenges = {}, languages = {}, total = 0, challengeN
             // Recursivamente escanear subdirectorios
             [challenges, languages, total] = scanDir(fullPath, challenges, languages, total, challengeName, file.name);
         } else {
+            // Contar archivos en lenguajes
             if (pathName in languages) {
                 total += 1;
                 if (challengeName) challenges[challengeName] += 1;
@@ -48,18 +49,21 @@ languages = Object.fromEntries(
 
 // Construir el contenido de las estadísticas
 let statsContent = `\n## Estadísticas de los Retos de Programación\n\n`;
-statsContent += `> ${Object.keys(languages).length} LENGUAJES (${total} CORRECCIONES)\n\n`;
+statsContent += `> **${Object.keys(languages).length} LENGUAJES (${total} CORRECCIONES)**\n\n`;
 
+// Agregar retos a las estadísticas
+statsContent += `### Retos\n`;
 Object.keys(challenges).forEach(challenge => {
     const percentage = ((challenges[challenge] / total) * 100).toFixed(2);
     statsContent += `> ${challenge.toUpperCase()} (${challenges[challenge]}): ${percentage}%\n`;
 });
 
-statsContent += `\n`;
-
+// Agregar lenguajes a las estadísticas
+statsContent += `\n### Lenguajes\n`;
+statsContent += `- **Lenguajes Utilizados**:\n`;
 Object.keys(languages).forEach(language => {
     const percentage = ((languages[language] / total) * 100).toFixed(2);
-    statsContent += `> ${language.toUpperCase()} (${languages[language]}): ${percentage}%\n`;
+    statsContent += `  - ${language.toUpperCase()} (${languages[language]}): ${percentage}%\n`;
 });
 
 // Escribir el contenido al final del archivo README.md
