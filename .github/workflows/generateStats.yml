@@ -1,0 +1,46 @@
+name: Generate Stats
+
+# Este workflow se ejecutará en cada push o solicitud de pull en la rama principal
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '*/5 * * * *'  # Esto ejecuta el workflow cada 5 minutos
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout del código del repositorio
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Configuración de Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # Puedes cambiarlo según la versión que necesites
+
+    # Instalar dependencias
+    - name: Install dependencies
+      run: npm install
+
+    # Ejecutar el script generateStats.js
+    - name: Run generateStats.js
+      run: node generateStats.js
+
+    # Commit y push de los cambios en README.md
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        git commit -m "Update stats in README" || echo "No changes to commit"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

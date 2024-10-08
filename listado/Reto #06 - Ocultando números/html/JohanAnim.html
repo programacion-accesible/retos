@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto número 6 - Ocultando números</title>
+    <script>
+        function calcularSumaDivisores(numero) {
+            let sumaTotal = 0;
+
+            // Convertir el número a una cadena para procesar cada par de dígitos
+            const numeroStr = numero.toString();
+
+            // Iterar sobre los pares de dígitos
+            for (let i = 0; i < numeroStr.length; i += 2) {
+                // Obtener el par de dígitos
+                const par = parseInt(numeroStr[i] + numeroStr[i + 1]);
+                sumaTotal += obtenerSumaDivisoresPropios(par);
+            }
+
+            return sumaTotal;
+        }
+
+        function obtenerSumaDivisoresPropios(n) {
+            let sumaDivisores = 0;
+
+            // Encontrar divisores propios
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    sumaDivisores += i; // Sumar el divisor propio
+                }
+            }
+
+            return sumaDivisores;
+        }
+
+        function procesarInput() {
+            const input = document.getElementById("numero").value;
+            const resultado = calcularSumaDivisores(input);
+            document.getElementById("resultado").innerText = "Resultado: " + resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Reto número 6 - Ocultando números</h1>
+    <label for="numero">Ingresa un número entero positivo:</label>
+    <input type="number" id="numero" required>
+    <button onclick="procesarInput()">Calcular</button>
+    <p id="resultado" role="alert"></p>
+</body>
+</html>

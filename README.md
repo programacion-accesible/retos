@@ -1,37 +1,51 @@
-﻿# Retos
+# Retos de Programación
 
 Retos de programación para practicar tus lenguajes favoritos.
 
 ## ¿Qué es?
 
-La comunidad de Programación Accesible va lanzando retos a sus usuarios para que traten de resolverlos empleando el lenguaje de programación de su preferencia. Este repositorio es el lugar en el que estarán todos ellos centralizados, de forma que aquí encontrarás los enunciados y las soluciones que se hayan ido aportando.
+La comunidad de **Programación Accesible** lanza retos a sus usuarios para que los resuelvan utilizando el lenguaje de programación de su elección. Este repositorio centraliza todos estos retos, donde podrás encontrar los enunciados y las soluciones aportadas por los miembros de la comunidad.
 
 ## ¿Cómo funciona?
 
-Cada reto estará en su propia carpeta. Dichos directorios van numerados de acuerdo con el orden en el que fueron propuestos los retos. Todo lo que debes hacer es entrar en el que te apetezca y mirar las soluciones o proponer la tuya.
+Cada reto está organizado en su propia carpeta, numerada según el orden en el que fueron propuestos. Solo necesitas acceder a la carpeta que más te interese y explorar las soluciones o proponer la tuya.
+
+## Estadísticas
+
+Este repositorio incluye una sección de estadísticas que te permite visualizar el total de retos, la cantidad de soluciones por lenguaje de programación, y más información relevante sobre los desafíos propuestos. Puedes acceder a las estadísticas [aquí](./estadisticas.html).
 
 ## ¿Cómo solucionar un reto?
 
-Dentro de cada reto encontrarás un archivo README.md que contiene el enunciado del reto y las instrucciones para aportar. En general, observarás que las soluciones están organizadas en carpetas según el lenguaje de programación empleado y llevan el nombre del nombre de usuario de GitHub de quien las haya programado.
+Dentro de cada reto encontrarás un archivo `README.md` que contiene el enunciado del reto y las instrucciones para contribuir. Las soluciones están organizadas en subcarpetas según el lenguaje de programación utilizado, y cada solución lleva el nombre de usuario de GitHub del autor.
 
 ## Cómo proponer un reto
 
-Los retos pueden ser de tu invención o pueden ser obtenidos de algún sitio en el que los hayas visto y te hayan parecido curiosos. Tendrás que hacer una pull request con una carpeta para tu reto. Dentro de ella tendrás que poner un archivo README.md respetando el formato de los de los retos que ya existen. Tu archivo deberá incluir los siguientes datos:
+Los retos pueden ser originales o inspirados en otros que hayas encontrado y te hayan parecido interesantes. Para proponer un reto, deberás hacer una **pull request** con una carpeta que contenga:
 
-- El enunciado.
-- La fuente original de donde lo hayas obtenido.
-- Lo que se debe tener en cuenta que puede hacer el usuario y cómo debe reaccionar el programa.
-- Un posible ejemplo de la salida del programa que ayude a aclarar cómo se resuelve el problema.
-- La forma de proponer la solución.
+- Un archivo `README.md` siguiendo el formato de los retos existentes, que incluya:
+  - El enunciado del reto.
+  - La fuente original de donde lo obtuviste.
+  - Consideraciones sobre lo que el usuario puede hacer y cómo debe reaccionar el programa.
+  - Un ejemplo de la salida del programa para clarificar la resolución del problema.
+  - Instrucciones sobre cómo proponer una solución.
 
 ## Normas para hacer commits
 
-Debes hacer los commits en estilo imperativo, es dcir, el mensaje de tu commit completará la frase &laquo;Este commit...&raquo;. Además, recuerda que no debes poner el punto final.
+Los mensajes de commit deben seguir el estilo imperativo, completando la frase "Este commit...". Recuerda no incluir punto final en los mensajes.
 
-### Un ejemplo
+### Ejemplo
 
-Imagina que en el mensaje que se imprime en tu propia solución has escrito vurro (con v) o jente (con j). Una vez que lo corrijas y guardes el archivo un buen mensaje de commit podría ser:
+Si has corregido un error tipográfico en la salida de tu programa, un mensaje de commit adecuado podría ser:
 
 > Corrige faltas de ortografía en la salida del programa
 
-Como puedes observar, el mensaje empieza con un verbo en imperativo y no se ha escrito el punto final.
+## Contribuciones
+
+¡Las contribuciones son bienvenidas! Si deseas contribuir, sigue estos pasos:
+
+1. **Crea un fork del repositorio.**
+2. **Crea una nueva rama**:
+   ```bash
+   git checkout -b feature/nueva-caracteristica
+
+Final.
