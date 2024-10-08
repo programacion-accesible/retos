@@ -22,26 +22,15 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '20'  # Puedes cambiarlo según la versión que necesites
 
     # Instalar dependencias
     - name: Install dependencies
       run: npm install
 
-    # Agregar pasos de debug
-    - name: List files
-      run: ls -la
-
-    - name: Show README content
-      run: cat README.md
-
-    - name: Check Node.js version
-      run: node -v
-
     # Ejecutar el script generateStats.js
     - name: Run generateStats.js
-      run: |
-        node generateStats.js || { echo 'generateStats.js failed'; exit 1; }
+      run: node generateStats.js
 
     # Commit y push de los cambios en README.md
     - name: Commit and push changes
@@ -49,7 +38,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add README.md
-        git commit -m "Update stats in README" || echo "No changes to commit"
+        git commit -m "Update stats in README"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,12 @@
+{
+	"name": "retos",
+	"version": "1.0.0",
+	"description": "Automatización de estadísticas",
+	"main": "generateStats.js",
+	"scripts": {
+		"start": "node generateStats.js"
+	},
+	"dependencies": {
+		"fs": "^0.0.1-security"
+	}
+}
