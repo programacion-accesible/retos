@@ -22,11 +22,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://${{ github.repository }}.github.io/estadisticas  # Esto es dinámico
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,8 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload specific directory containing the static content
-          path: './listado/estadisticas.html'
+          path: './listado/estadisticas.html'  # Asegúrate de que los archivos estáticos estén aquí
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
