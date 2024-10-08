@@ -73,8 +73,8 @@
 	<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
 
 	<script>
-		// Conectar al servidor Socket.io
-		const socket = io('http://localhost:3000', {
+		// Conectar al servidor Socket.io pero detectar el enlace de manera automatica
+		const socket = io('https://JohanAnim.github.io:3000', {
 			transports: ['websocket']
 		});
 

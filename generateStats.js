@@ -15,6 +15,17 @@ const io = socketIo(server, {
     }
 });
 
+// Cambiar el puerto a 80
+const PORT = 80;
+
+// Servir archivos estáticos desde la carpeta 'cliente'
+app.use(express.static(path.join(__dirname, 'cliente')));
+
+// Ruta para servir el archivo estadistica.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'cliente', 'estadistica.html'));
+});
+
 // Directorio de retos a analizar
 const dirPath = path.join(__dirname, 'listado');
 
@@ -112,6 +123,6 @@ io.on('connection', (socket) => {
 });
 
 // Iniciar el servidor
-server.listen(3000, () => {
-    console.log('Servidor escuchando en puerto 3000');
+server.listen(PORT, () => {
+    console.log(`Servidor escuchando en puerto ${PORT}`);
 });
