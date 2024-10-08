@@ -1,0 +1,41 @@
+name: Deploy Node.js app with Express and Socket.io
+
+on:
+  # Ejecuta el workflow cuando haya cambios en la rama "main"
+  push:
+    branches: ["main"]
+
+  # Permite ejecutar manualmente este workflow desde la pestaña "Actions"
+  workflow_dispatch:
+
+jobs:
+  # Job para construir y ejecutar la aplicación
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout del repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Configurar Node.js versión 20
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Instalar dependencias
+      - name: Install dependencies
+        run: npm install
+
+      # Ejecutar pruebas (opcional, elimina si no tienes tests)
+      - name: Run tests
+        run: npm test
+
+      # Construir la aplicación (si es necesario)
+      - name: Build app
+        run: npm run build
+
+      # Iniciar la aplicación
+      - name: Start app
+        run: npm run start
