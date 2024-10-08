@@ -1,6 +1,6 @@
-name: Generate Stats
+name: Generate Stats and Start Server
 
-# Este workflow se ejecutará en cada push o solicitud de pull en la rama principal
+# Ejecuta el flujo de trabajo en cada push, pull request y cada 5 minutos
 on:
   push:
     branches:
@@ -9,32 +9,48 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/5 * * * *'  # Esto ejecuta el workflow cada 5 minutos
+    - cron: '*/5 * * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout del código del repositorio
+    # 1. Checkout del código del repositorio
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Configuración de Node.js
+    # 2. Configuración de Node.js
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # Puedes cambiarlo según la versión que necesites
+        node-version: '20'  # Ajusta según tu versión de Node.js
 
-    # Instalar dependencias
+    # 3. Instalar dependencias
     - name: Install dependencies
       run: npm install
 
-    # Ejecutar el script generateStats.js
+    # 4. Iniciar servidor Express en segundo plano
+    - name: Start Express server
+      run: |
+        nohup node server.js &
+
+    # 5. Instalar ngrok para exponer el puerto
+    - name: Install ngrok
+      run: npm install -g ngrok
+
+    # 6. Exponer el puerto 3000 usando ngrok
+    - name: Expose port using ngrok
+      run: |
+        ngrok http 3000 > /dev/null &
+        sleep 5  # Esperar un poco para que ngrok se inicie
+        curl http://127.0.0.1:4040/api/tunnels  # Mostrar la URL pública de ngrok en los logs
+
+    # 7. Ejecutar el script generateStats.js
     - name: Run generateStats.js
       run: node generateStats.js
 
-    # Commit y push de los cambios en README.md
+    # 8. Commit y push de los cambios en README.md
     - name: Commit and push changes
       run: |
         git config --global user.name "github-actions[bot]"
