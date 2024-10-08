@@ -35,17 +35,6 @@ Si has corregido un error tipográfico en la salida de tu programa, un mensaje d
 
 > Corrige faltas de ortografía en la salida del programa
 
-## Estadísticas Generadas
-
-Este repositorio incluye un sistema automatizado para generar estadísticas sobre el uso de lenguajes y retos mediante **GitHub Actions**. Cada vez que realizas un **push** o abres una **pull request** en la rama `main`, se ejecuta un script (`generateStats.js`) que actualiza automáticamente el archivo `README.md` con las estadísticas más recientes.
-
-### Estadísticas Incluidas
-
-- Total de lenguajes utilizados.
-- Total de correcciones realizadas.
-- Porcentaje de uso de cada reto.
-- Porcentaje de uso de cada lenguaje.
-
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Si deseas contribuir, sigue estos pasos:

@@ -1,3 +1,4 @@
+
 const fs = require('fs');
 const path = require('path');
 
@@ -30,7 +31,7 @@ function scanDir(dirPath, challenges = {}, languages = {}, total = 0, challengeN
     return [challenges, languages, total];
 }
 
-// Directorio de retos a analizar, ajustado a la carpeta `listado` en la raíz del proyecto
+// Directorio de retos a analizar
 const dirPath = path.join(__dirname, 'listado');
 
 // Escanear el directorio y obtener estadísticas
@@ -45,24 +46,24 @@ languages = Object.fromEntries(
     Object.entries(languages).sort(([, a], [, b]) => b - a)
 );
 
-// Construir el contenido del README
-let readmeContent = `# Estadísticas de los Retos de Programación\n\n`;
-readmeContent += `> ${Object.keys(languages).length} LENGUAJES (${total} CORRECCIONES)\n\n`;
+// Construir el contenido de las estadísticas
+let statsContent = `\n## Estadísticas de los Retos de Programación\n\n`;
+statsContent += `> ${Object.keys(languages).length} LENGUAJES (${total} CORRECCIONES)\n\n`;
 
 Object.keys(challenges).forEach(challenge => {
     const percentage = ((challenges[challenge] / total) * 100).toFixed(2);
-    readmeContent += `> ${challenge.toUpperCase()} (${challenges[challenge]}): ${percentage}%\n`;
+    statsContent += `> ${challenge.toUpperCase()} (${challenges[challenge]}): ${percentage}%\n`;
 });
 
-readmeContent += `\n`;
+statsContent += `\n`;
 
 Object.keys(languages).forEach(language => {
     const percentage = ((languages[language] / total) * 100).toFixed(2);
-    readmeContent += `> ${language.toUpperCase()} (${languages[language]}): ${percentage}%\n`;
+    statsContent += `> ${language.toUpperCase()} (${languages[language]}): ${percentage}%\n`;
 });
 
-// Escribir el contenido al archivo README.md
+// Escribir el contenido al final del archivo README.md
 const readmePath = path.join(__dirname, 'README.md');
-fs.writeFileSync(readmePath, readmeContent, 'utf8');
+fs.appendFileSync(readmePath, statsContent, 'utf8');
 
-console.log('Estadísticas generadas y guardadas en README.md');
+console.log('Estadísticas generadas y añadidas a README.md');
