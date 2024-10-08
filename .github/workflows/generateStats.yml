@@ -8,6 +8,8 @@ on:
   pull_request:
     branches:
       - main
+  schedule:
+    - cron: '*/5 * * * *'  # Esto ejecuta el workflow cada 5 minutos
 
 jobs:
   build:
@@ -38,7 +40,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add README.md
-        git commit -m "Update stats in README"
+        git commit -m "Update stats in README" || echo "No changes to commit"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

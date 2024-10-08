@@ -7,6 +7,8 @@
 		"start": "node generateStats.js"
 	},
 	"dependencies": {
-		"fs": "^0.0.1-security"
+		"express": "^4.21.0",
+		"fs": "^0.0.1-security",
+		"socket.io": "^4.8.0"
 	}
 }
