@@ -1,37 +1,17 @@
-﻿# Retos
+# Estadísticas de los Retos de Programación
 
-Retos de programación para practicar tus lenguajes favoritos.
+> 6 LENGUAJES (20 CORRECCIONES)
 
-## ¿Qué es?
+> RETO #02 - RECICLAJE (6): 30.00%
+> RETO #01 - DIVISIÓN LÓGICA (5): 25.00%
+> RETO #03 - ADIVINA EL NÚMERO (4): 20.00%
+> RETO #05 - AGUA PARA PROGRAMADORES (4): 20.00%
+> RETO #04 - ELEMENTOS PARES (1): 5.00%
+> RETO #06 - OCULTANDO NÚMEROS (0): 0.00%
 
-La comunidad de Programación Accesible va lanzando retos a sus usuarios para que traten de resolverlos empleando el lenguaje de programación de su preferencia. Este repositorio es el lugar en el que estarán todos ellos centralizados, de forma que aquí encontrarás los enunciados y las soluciones que se hayan ido aportando.
-
-## ¿Cómo funciona?
-
-Cada reto estará en su propia carpeta. Dichos directorios van numerados de acuerdo con el orden en el que fueron propuestos los retos. Todo lo que debes hacer es entrar en el que te apetezca y mirar las soluciones o proponer la tuya.
-
-## ¿Cómo solucionar un reto?
-
-Dentro de cada reto encontrarás un archivo README.md que contiene el enunciado del reto y las instrucciones para aportar. En general, observarás que las soluciones están organizadas en carpetas según el lenguaje de programación empleado y llevan el nombre del nombre de usuario de GitHub de quien las haya programado.
-
-## Cómo proponer un reto
-
-Los retos pueden ser de tu invención o pueden ser obtenidos de algún sitio en el que los hayas visto y te hayan parecido curiosos. Tendrás que hacer una pull request con una carpeta para tu reto. Dentro de ella tendrás que poner un archivo README.md respetando el formato de los de los retos que ya existen. Tu archivo deberá incluir los siguientes datos:
-
-- El enunciado.
-- La fuente original de donde lo hayas obtenido.
-- Lo que se debe tener en cuenta que puede hacer el usuario y cómo debe reaccionar el programa.
-- Un posible ejemplo de la salida del programa que ayude a aclarar cómo se resuelve el problema.
-- La forma de proponer la solución.
-
-## Normas para hacer commits
-
-Debes hacer los commits en estilo imperativo, es dcir, el mensaje de tu commit completará la frase &laquo;Este commit...&raquo;. Además, recuerda que no debes poner el punto final.
-
-### Un ejemplo
-
-Imagina que en el mensaje que se imprime en tu propia solución has escrito vurro (con v) o jente (con j). Una vez que lo corrijas y guardes el archivo un buen mensaje de commit podría ser:
-
-> Corrige faltas de ortografía en la salida del programa
-
-Como puedes observar, el mensaje empieza con un verbo en imperativo y no se ha escrito el punto final.
+> PYTHON (10): 50.00%
+> BASH (4): 20.00%
+> JAVASCRIPT (3): 15.00%
+> HASKELL (1): 5.00%
+> C# (1): 5.00%
+> C (1): 5.00%
