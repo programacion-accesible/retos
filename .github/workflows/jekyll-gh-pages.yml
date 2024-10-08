@@ -39,3 +39,11 @@ jobs:
       # Iniciar la aplicación
       - name: Start app
         run: npm run start
+
+      # Subir al repositorio de GitHub
+      - name: Deploy to GitHub Pages
+          
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cliente
