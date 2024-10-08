@@ -12,7 +12,7 @@ Cada reto está organizado en su propia carpeta, numerada según el orden en el 
 
 ## Estadísticas
 
-Este repositorio incluye una sección de estadísticas que te permite visualizar el total de retos, la cantidad de soluciones por lenguaje de programación, y más información relevante sobre los desafíos propuestos. Puedes acceder a las estadísticas [aquí](./listado/estadisticas.html).
+Este repositorio incluye una sección de estadísticas que te permite visualizar el total de retos, la cantidad de soluciones por lenguaje de programación, y más información relevante sobre los desafíos propuestos. Puedes acceder a las estadísticas [aquí](./estadisticas.html).
 
 ## ¿Cómo solucionar un reto?
 
@@ -47,45 +47,5 @@ Si has corregido un error tipográfico en la salida de tu programa, un mensaje d
 2. **Crea una nueva rama**:
    ```bash
    git checkout -b feature/nueva-caracteristica
-<<<<<<< HEAD
-=======
 
-## Estadísticas de los Retos de Programación
-
-> 6 LENGUAJES (20 CORRECCIONES)
-
-> RETO #02 - RECICLAJE (6): 30.00%
-> RETO #01 - DIVISIÓN LÓGICA (5): 25.00%
-> RETO #03 - ADIVINA EL NÚMERO (4): 20.00%
-> RETO #05 - AGUA PARA PROGRAMADORES (4): 20.00%
-> RETO #04 - ELEMENTOS PARES (1): 5.00%
-> RETO #06 - OCULTANDO NÚMEROS (0): 0.00%
-
-> PYTHON (10): 50.00%
-> BASH (4): 20.00%
-> JAVASCRIPT (3): 15.00%
-> HASKELL (1): 5.00%
-> C# (1): 5.00%
-> C (1): 5.00%
-
-## Estadísticas de los Retos de Programación
-
-> **6 LENGUAJES (20 CORRECCIONES)**
-
-### Retos
-> RETO #02 - RECICLAJE (6): 30.00%
-> RETO #01 - DIVISIÓN LÓGICA (5): 25.00%
-> RETO #03 - ADIVINA EL NÚMERO (4): 20.00%
-> RETO #05 - AGUA PARA PROGRAMADORES (4): 20.00%
-> RETO #04 - ELEMENTOS PARES (1): 5.00%
-> RETO #06 - OCULTANDO NÚMEROS (0): 0.00%
-
-### Lenguajes
-- **Lenguajes Utilizados**:
-  - PYTHON (10): 50.00%
-  - BASH (4): 20.00%
-  - JAVASCRIPT (3): 15.00%
-  - HASKELL (1): 5.00%
-  - C# (1): 5.00%
-  - C (1): 5.00%
->>>>>>> 8e1de6bec03c8890c3ed64f96a962e1adc2f3558
+Final.
