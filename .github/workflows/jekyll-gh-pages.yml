@@ -1,4 +1,4 @@
-name: Deploy Node.js app with Express and Socket.io
+name: Deploy Static Website
 
 on:
   # Ejecuta el workflow cuando haya cambios en la rama "main"
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  # Job para construir y desplegar la aplicación
+  # Job para construir y desplegar el contenido
   build-and-deploy:
     runs-on: ubuntu-latest
 
@@ -35,17 +35,13 @@ jobs:
 
       # Instalar dependencias
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      # Ejecutar pruebas (opcional)
-      - name: Run tests
-        run: npm test
+      # Generar el archivo JSON o cualquier otro procesamiento que necesites
+      - name: Generate Stats
+        run: node generateStats.js
 
-      # iniciar la aplicación
-      - name: Run start
-        run: npm start
-
-      # Subir al repositorio de GitHub Pages
+      # Desplegar en GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
