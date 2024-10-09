@@ -40,20 +40,23 @@ jobs:
 
       # Verificar si el archivo JSON ha sido generado
       - name: Verify JSON file
+        id: verify_json
         run: |
           if [ -f ./cliente/stats.json ]; then
             echo "El archivo JSON ha sido generado correctamente."
+            echo "exists=true" >> $GITHUB_ENV
           else
-            echo "Advertencia: El archivo JSON no fue generado." && exit 1
+            echo "Advertencia: El archivo JSON no fue generado."
+            echo "exists=false" >> $GITHUB_ENV
           fi
 
-      # Commit y push de los cambios (si el archivo JSON cambió)
+      # Commit y push de los cambios (si el archivo JSON ha cambiado o se ha creado)
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add ./cliente/stats.json
-          if ! git diff --cached --quiet; then
+          if ! git diff --cached --quiet || [ "${{ env.exists }}" = "false" ]; then
             git commit -m "Actualización automática del archivo JSON"
             git push origin main
           else
@@ -67,5 +70,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./estadisticas
-
+          publish_dir: ./estadisticas # Reemplaza con la ruta donde está el contenido que quieres publicar
