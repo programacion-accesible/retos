@@ -1,15 +1,12 @@
 name: Deploy Static Website
 
 on:
-  # Ejecuta el workflow cuando haya cambios en la rama "main"
   push:
-    branches: ["main"]
-
-  # Permite ejecutar manualmente este workflow desde la pestaña "Actions"
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  # Job para construir y desplegar el contenido
   build-and-deploy:
     runs-on: ubuntu-latest
 
@@ -22,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Asegura el uso de Node.js versión 20
+          node-version: '20'
 
       # Cachear los módulos de node para mejorar el rendimiento
       - name: Cache node modules
@@ -37,13 +34,32 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Ejecutar el script desde el comando build
+      # Ejecutar el script de build
       - name: Build
         run: npm run build
+
+      # Verificar si el archivo JSON ha sido generado
+      - name: Verify JSON file
+        run: |
+          if [ -f ./cliente/stats.json ]; then
+            echo "El archivo JSON ha sido generado correctamente."
+          else
+            echo "Advertencia: El archivo JSON no fue generado." && exit 1
+          
+      # Commit y push de los cambios (si el archivo JSON cambió)
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add ./cliente/stats.json
+          git diff --cached --quiet || git commit -m "Actualización automática del archivo JSON"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Necesario para hacer push a GitHub
 
       # Desplegar en GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cliente  # Directorio donde está el contenido a desplegar en GitHub Pages
+          publish_dir: ./cliente  # Reemplaza con la ruta donde está el contenido que quieres publicar
