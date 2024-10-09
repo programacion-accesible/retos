@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  # Job para construir y ejecutar la aplicación
+  # Job para construir y desplegar la aplicación
   build-and-deploy:
     runs-on: ubuntu-latest
 
@@ -29,7 +29,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-modules-
 
@@ -41,13 +41,9 @@ jobs:
       - name: Run tests
         run: npm test
 
-      # Construir la aplicación (si es necesario)
-      - name: Build app
-        run: npm run build
-
-      # Iniciar la aplicación (solo para pruebas locales)
-      - name: Start app
-        run: npm run start
+      # iniciar la aplicación
+      - name: Run start
+        run: npm start
 
       # Subir al repositorio de GitHub Pages
       - name: Deploy to GitHub Pages
