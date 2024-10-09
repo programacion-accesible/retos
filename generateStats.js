@@ -3,7 +3,7 @@ const path = require('path');
 
 // Directorio de retos a analizar
 const dirPath = path.join(__dirname, 'listado');
-const outputPath = path.join(__dirname, 'cliente', 'stats.json'); // Archivo donde guardaremos las estadísticas
+const outputPath = path.join(__dirname, 'estadisticas', 'stats.json'); // Archivo donde guardaremos las estadísticas
 
 // Función para escanear el directorio y calcular las estadísticas
 function scanDir(dirPath, challenges = {}, languages = {}, participants = {}, total = 0, challengeName = null, pathName = null) {
