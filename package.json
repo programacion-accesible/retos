@@ -4,11 +4,10 @@
 	"description": "Automatización de estadísticas",
 	"main": "generateStats.js",
 	"scripts": {
-		"start": "node generateStats.js"
+		"build": "node generateStats.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"express": "^4.21.0",
-		"fs": "^0.0.1-security",
-		"socket.io": "^4.8.0"
+		"fs": "^0.0.1-security"
 	}
 }

@@ -1,22 +1,9 @@
-const express = require('express');
-const http = require('http');
-const socketIo = require('socket.io');
 const fs = require('fs');
 const path = require('path');
 
-const app = express();
-const server = http.createServer(app);
-
-// Habilitar CORS en Socket.io
-const io = socketIo(server, {
-    cors: {
-        origin: "*",
-        methods: ["GET", "POST"]
-    }
-});
-
 // Directorio de retos a analizar
 const dirPath = path.join(__dirname, 'listado');
+const outputPath = path.join(__dirname, 'estadisticas', 'stats.json'); // Archivo donde guardaremos las estadísticas
 
 // Función para escanear el directorio y calcular las estadísticas
 function scanDir(dirPath, challenges = {}, languages = {}, participants = {}, total = 0, challengeName = null, pathName = null) {
@@ -58,7 +45,7 @@ function calculatePercentage(count, total) {
     return total > 0 ? ((count / total) * 100).toFixed(2) : 0;
 }
 
-// Emisión de las estadísticas a través de Socket.io
+// Emitir estadísticas y guardarlas en archivo JSON
 function emitStats() {
     // Escanear el directorio y obtener estadísticas
     let [challenges, languages, participants, total] = scanDir(dirPath);
@@ -91,27 +78,19 @@ function emitStats() {
         percentage: calculatePercentage(participants[participant], total)
     }));
 
-    io.emit('updateStats', {
+    const stats = {
         challenges: sortedChallenges,
         languages: sortedLanguages,
         participants: sortedParticipants,
         total: total,
         languageCount: Object.keys(languages).length,
         lastUpdated: new Date().toISOString()
-    });
+    };
+
+    // Guardar en un archivo JSON
+    fs.writeFileSync(outputPath, JSON.stringify(stats, null, 2));
+    console.log('Estadísticas generadas y guardadas en stats.json');
 }
 
-// Emitir estadísticas cada vez que un cliente se conecta
-io.on('connection', (socket) => {
-    console.log('Cliente conectado');
-    emitStats();
-
-    socket.on('disconnect', () => {
-        console.log('Cliente desconectado');
-    });
-});
-
-// Iniciar el servidor
-server.listen(3000, () => {
-    console.log('Servidor escuchando en puerto 3000');
-});
+// Llamar a la función para emitir estadísticas
+emitStats();

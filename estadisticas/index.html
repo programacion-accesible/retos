@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas de Programación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .participants-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .participants-list li {
+            margin: 5px 0;
+        }
+
+        .participants-list a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .participants-list a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Estadísticas de los Retos de Programación</h1>
+        <p>Estas estadísticas muestran la cantidad de retos realizados y el porcentaje de uso de cada lenguaje de programación.</p>
+
+        <div id="stats">
+            <p>Cargando estadísticas...</p>
+        </div>
+
+        <div id="participants" style="display: none;">
+            <h2>Participantes:</h2>
+            <ul id="participants-list" class="participants-list">
+                <p>Cargando participantes...</p>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer>
+        <p id="update-date"></p>
+    </footer>
+
+    <script>
+        // Función para generar HTML de las estadísticas
+        const generateStatisticsHTML = (data) => {
+            const challengesHtml = data.challenges.map(challenge => `
+                <li>
+                    ${challenge.name}: ${challenge.count} (${challenge.percentage}%) 
+                    <progress value="${challenge.percentage}" max="100"></progress>
+                </li>
+            `).join('');
+
+            const languagesHtml = data.languages.map(lang => `
+                <li>
+                    ${lang.name}: ${lang.count} (${lang.percentage}%) 
+                    <progress value="${lang.percentage}" max="100"></progress>
+                </li>
+            `).join('');
+
+            return `
+                <p>Total de lenguajes: ${data.languageCount} (${data.total} Correcciones)</p>
+                <h2>Retos:</h2>
+                <ul>${challengesHtml}</ul>
+                <h2>Lenguajes Utilizados:</h2>
+                <ul>${languagesHtml}</ul>
+            `;
+        };
+
+        // Cargar estadísticas desde el archivo stats.json
+        fetch('stats.json')
+            .then(response => response.json())
+            .then(stats => {
+                const statsDiv = document.getElementById('stats');
+                const participantsList = document.getElementById('participants-list');
+
+                // Generar y mostrar estadísticas
+                statsDiv.innerHTML = generateStatisticsHTML(stats);
+
+                // Ordenar participantes y mostrar
+                const urlgithub = 'https://github.com/';
+                const sortedParticipants = stats.participants.sort((a, b) => b.percentage - a.percentage);
+                participantsList.innerHTML = sortedParticipants.map(participant => `
+                    <li>
+                        <a href="${urlgithub}${participant.name}" target="_blank">${participant.name}</a>: ${participant.count} (${participant.percentage}%)
+                    </li>
+                `).join('');
+
+                document.getElementById('participants').style.display = 'block'; // Mostrar sección de participantes
+
+                // La fecha de actualización
+                const formattedDate = new Date(stats.lastUpdated).toLocaleString();
+                document.getElementById('update-date').innerHTML = "La última actualización fue el: " + formattedDate;
+            })
+            .catch(error => {
+                document.getElementById('stats').innerHTML = '<p class="error-message">No se pudieron cargar las estadísticas.</p>';
+                console.error('Error al cargar las estadísticas:', error);
+            });
+    </script>
+</body>
+
+</html>
