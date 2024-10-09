@@ -42,7 +42,7 @@ jobs:
       - name: Verify JSON file
         id: verify_json
         run: |
-          if [ -f ./cliente/stats.json ]; then
+          if [ -f ./estadisticas/stats.json ]; then
             echo "El archivo JSON ha sido generado correctamente."
             echo "exists=true" >> $GITHUB_ENV
           else
@@ -55,7 +55,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add ./cliente/stats.json
+          git add ./estadisticas/stats.json
           if ! git diff --cached --quiet || [ "${{ env.exists }}" = "false" ]; then
             git commit -m "Actualización automática del archivo JSON"
             git push origin main || { echo "Error al hacer push"; exit 1; }
