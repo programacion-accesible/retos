@@ -45,21 +45,26 @@ jobs:
             echo "El archivo JSON ha sido generado correctamente."
           else
             echo "Advertencia: El archivo JSON no fue generado." && exit 1
-          
+          fi
+
       # Commit y push de los cambios (si el archivo JSON cambió)
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add ./cliente/stats.json
-          git diff --cached --quiet || git commit -m "Actualización automática del archivo JSON"
-          git push origin main
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualización automática del archivo JSON"
+            git push origin main
+          else
+            echo "No hay cambios en el archivo JSON, no se realizará un commit."
+          fi
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Necesario para hacer push a GitHub
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Desplegar en GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cliente  # Reemplaza con la ruta donde está el contenido que quieres publicar
+          publish_dir: ./cliente
