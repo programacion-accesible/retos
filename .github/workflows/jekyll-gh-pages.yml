@@ -18,11 +18,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Configurar la última versión estable de Node.js
+      # Configurar Node.js versión 20
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*' # Utiliza la última versión LTS disponible de Node.js
+          node-version: '20'  # Asegura el uso de Node.js versión 20
 
       # Cachear los módulos de node para mejorar el rendimiento
       - name: Cache node modules
@@ -35,7 +35,7 @@ jobs:
 
       # Instalar dependencias
       - name: Install dependencies
-        run: npm ci # `npm ci` es más rápido y fiable para entornos CI que `npm install`
+        run: npm ci
 
       # Ejecutar pruebas (opcional)
       - name: Run tests
@@ -45,13 +45,13 @@ jobs:
       - name: Build app
         run: npm run build
 
-      # Iniciar la aplicación (esto solo sirve para pruebas locales, no en producción)
+      # Iniciar la aplicación (solo para pruebas locales)
       - name: Start app
         run: npm run start
 
-      # Subir al repositorio de GitHub Pages (si tienes una página que mostrar)
+      # Subir al repositorio de GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cliente  # Directorio donde se encuentra el contenido a desplegar en GitHub Pages
+          publish_dir: ./cliente  # Directorio donde está el contenido a desplegar en GitHub Pages
