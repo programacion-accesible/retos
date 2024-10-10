@@ -7,7 +7,7 @@ def partir(valor, tamano):
     return [int(valor[i:i+tamano]) for i in range(0, len(valor), tamano)]
 
 def calcular_divisores(num):
-    # Esta función calcula los divisores de los número devueltos en la lista por la función partir
+    # Esta función calcula los divisores de los números devueltos en la lista por la función partir. Utiliza la fórmula de que un número es divisor de otro si al dividirlo su reciduo es 0. Por último, utiliza un contador que contará a partir de 2 mientras que el contador sea menor al número
     contador = 2
     suma = 0
     while contador < num:
@@ -20,7 +20,7 @@ def calcular_divisores(num):
 
 
 def sumar_divisores_partidos(valor, tamano):
-# Por último, esta función convina las otras 2, primero obteniendo la lista con la función partir, recorriéndo dicha lista y luego llamando a la función que calcula los divisores para que calcule cada número partido y finalmente que sume los divisores y devuelva un entero
+# Por último, esta función combina las otras 2, primero obteniendo la lista con la función partir, recorriendo dicha lista y luego llamando a la función que calcula los divisores para que calcule cada número partido y finalmente sume los divisores y devuelva un entero
     partes = partir(valor, tamano)
     suma_total = 0
 
