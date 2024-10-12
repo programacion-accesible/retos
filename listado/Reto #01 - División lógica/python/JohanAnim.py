@@ -23,8 +23,8 @@ try:
 	print("Muchas gracias por provar mi solución! Si te gustó sígueme en GitHub como @JohanAnim. ¡Hasta la próxima.")
 	input("Pulsa enter para finalizar.")
 
-except ZeroDivisionError as e:
-	print(f"Lo ciento, pero el programa se detuvo por este motivo: {e}")
+except ZeroDivisionError:
+	print("Lo ciento, no puedes dividir entre 0.")
 
 except ValueError as e:
 	print(f"Lo ciento, pero el programa se detuvo por este motivo: {e}")
