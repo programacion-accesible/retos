@@ -1,106 +1,106 @@
 {
   "challenges": [
     {
-      "name": "Reto #02 - Reciclaje",
+      "name": "Reto #01 - División lógica",
       "count": 6,
-      "percentage": "24.00"
+      "percentage": "23.08"
     },
     {
-      "name": "Reto #01 - División lógica",
-      "count": 5,
-      "percentage": "20.00"
+      "name": "Reto #02 - Reciclaje",
+      "count": 6,
+      "percentage": "23.08"
     },
     {
       "name": "Reto #03 - Adivina el número",
       "count": 4,
-      "percentage": "16.00"
+      "percentage": "15.38"
     },
     {
       "name": "Reto #05 - Agua para Programadores",
       "count": 4,
-      "percentage": "16.00"
+      "percentage": "15.38"
     },
     {
       "name": "Reto #06 - Ocultando números",
       "count": 4,
-      "percentage": "16.00"
+      "percentage": "15.38"
     },
     {
       "name": "Reto #04 - Elementos pares",
       "count": 2,
-      "percentage": "8.00"
+      "percentage": "7.69"
     }
   ],
   "languages": [
     {
       "name": "python",
-      "count": 12,
-      "percentage": "48.00"
+      "count": 13,
+      "percentage": "50.00"
     },
     {
       "name": "bash",
       "count": 6,
-      "percentage": "24.00"
+      "percentage": "23.08"
     },
     {
       "name": "javascript",
       "count": 3,
-      "percentage": "12.00"
+      "percentage": "11.54"
     },
     {
       "name": "haskell",
       "count": 1,
-      "percentage": "4.00"
+      "percentage": "3.85"
     },
     {
       "name": "c#",
       "count": 1,
-      "percentage": "4.00"
+      "percentage": "3.85"
     },
     {
       "name": "C",
       "count": 1,
-      "percentage": "4.00"
+      "percentage": "3.85"
     },
     {
       "name": "html",
       "count": 1,
-      "percentage": "4.00"
+      "percentage": "3.85"
     }
   ],
   "participants": [
     {
       "name": "elvinv11",
-      "count": 6,
-      "percentage": "24.00"
+      "count": 7,
+      "percentage": "26.92"
     },
     {
       "name": "sukiletxe",
       "count": 3,
-      "percentage": "12.00"
+      "percentage": "11.54"
     },
     {
       "name": "quicosv",
       "count": 5,
-      "percentage": "20.00"
+      "percentage": "19.23"
     },
     {
       "name": "ronnyg2121",
       "count": 6,
-      "percentage": "24.00"
+      "percentage": "23.08"
     },
     {
       "name": "villegasamador",
       "count": 3,
-      "percentage": "12.00"
+      "percentage": "11.54"
     },
     {
       "name": "JohanAnim",
       "count": 2,
-      "percentage": "8.00"
+      "percentage": "7.69"
     }
   ],
-  "total": 25,
+  "total": 26,
   "languageCount": 7,
-  "lastUpdated": "2024-10-10T21:00:24.292Z"
+  "lastUpdated": "2024-10-12T22:15:42.963Z"
 }
