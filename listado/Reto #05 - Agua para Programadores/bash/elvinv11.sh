@@ -2,6 +2,7 @@
 
 # script hecho por Elvin Vargas
 
+while True; do
 read -p "Ingrese la cantidad de litros (N): " n # se pide al usurio cantidad de litros y se guarda en la variable $n
 if [[ $n =~ ^[0-9]+$ ]]; then  # se comprueba que el dato es un entero
     if [[ $n -ge 1 && $n -le 10**12 ]]; then # se comprueba que el valor de $n es mayor o igual que 1 y menor o igual a 10 elevado a la 12
@@ -14,11 +15,14 @@ if [[ $n =~ ^[0-9]+$ ]]; then  # se comprueba que el dato es un entero
                     total_b=$(($n * $b / 2)) # se multiplica litros por precios y se divide entre 2 da la cantidad de dinero al comprar botellas de dos litros
                     if (( $total_b <= $total_a )); then # comprueba si la cantidad de del precio de dos litros es menor que las de 1 litros
                         echo "El costo mínimo para comprar $n litro de agua es: ${total_b}" # es la salida si el valor de las botellas de 2 litros de agua es menor 
+                        exit 0
                     else
                         echo "El costo mínimo para comprar $n litro de agua es: ${total_a}" # es la salida si el valor de las botellas de 1 litros de agua es menor y es un $n es par 
+                        exit 0
                     fi # cierra el if de que comprueba que precio es menor para el usuario
                 else
                     echo "El costo mínimo para comprar $n litro de agua es: $(($n * a))" # es la salida si $n no es par el usuario deve comprar botellas de 1 litros porque no se pueden mesclar
+                    exit 0
                 fi # se cierra el if que comprueba si $n es par
             else
                 echo "Estimado el valor deve ser un entero >= 1 y <= 1000"
@@ -32,3 +36,4 @@ if [[ $n =~ ^[0-9]+$ ]]; then  # se comprueba que el dato es un entero
 else
     echo "deves introducir un número entero"
 fi # se cierra el if que comrueba que $n es entero
+done
