@@ -42,6 +42,8 @@ Tienes cinco tareas, todas relacionadas con la preparación de tu receta.
 
 5. **Actualizar la receta con notas**  
    Regresa a la receta y agrega "notas" en forma de docstrings en las funciones.
+6. **Añade pruebas unitarias para cada una de las funciones que diseñes.**
+   Utiliza el módulo unittest para añadir las pruebas unitarias. Esto en el mismo archivo.
 
 ---
 
@@ -49,7 +51,7 @@ Tienes cinco tareas, todas relacionadas con la preparación de tu receta.
 [Exercism](https://exercism.org/)
 
 **Creado por**  
-@BethanyG
+[BethanyG](https://github.com/BethanyG)
 
 
 ## ¿Cómo participar?
