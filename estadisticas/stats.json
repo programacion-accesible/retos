@@ -34,8 +34,13 @@
   "languages": [
     {
       "name": "python",
+<<<<<<< HEAD
       "count": 18,
       "percentage": "56.25"
+=======
+      "count": 17,
+      "percentage": "53.13"
+>>>>>>> 6dbadaf1dc14c8d0befc690f27457c8f48a677cb
     },
     {
       "name": "bash",
@@ -44,8 +49,13 @@
     },
     {
       "name": "javascript",
+<<<<<<< HEAD
       "count": 3,
       "percentage": "9.38"
+=======
+      "count": 4,
+      "percentage": "12.50"
+>>>>>>> 6dbadaf1dc14c8d0befc690f27457c8f48a677cb
     },
     {
       "name": "haskell",
@@ -71,8 +81,13 @@
   "participants": [
     {
       "name": "elvinv11",
+<<<<<<< HEAD
       "count": 10,
       "percentage": "31.25"
+=======
+      "count": 9,
+      "percentage": "28.13"
+>>>>>>> 6dbadaf1dc14c8d0befc690f27457c8f48a677cb
     },
     {
       "name": "sukiletxe",
@@ -81,8 +96,13 @@
     },
     {
       "name": "JohanAnim",
+<<<<<<< HEAD
       "count": 3,
       "percentage": "9.38"
+=======
+      "count": 4,
+      "percentage": "12.50"
+>>>>>>> 6dbadaf1dc14c8d0befc690f27457c8f48a677cb
     },
     {
       "name": "quicosv",
@@ -104,6 +124,7 @@
   "languageCount": 7,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "lastUpdated": "2024-10-15T02:33:47.297Z"
 =======
   "lastUpdated": "2024-10-15T02:29:54.503Z"
@@ -111,4 +132,7 @@
 =======
   "lastUpdated": "2024-10-16T03:00:23.987Z"
 >>>>>>> 2eb5372b2270dd757e5972795cb9c5790d4a6679
+=======
+  "lastUpdated": "2024-10-18T12:31:46.427Z"
+>>>>>>> 6dbadaf1dc14c8d0befc690f27457c8f48a677cb
 }
