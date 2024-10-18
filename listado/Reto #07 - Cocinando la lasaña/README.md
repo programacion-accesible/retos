@@ -12,7 +12,7 @@ Tienes cinco tareas, todas relacionadas con la preparación de tu receta.
    Define la constante `EXPECTED_BAKE_TIME` que representa cuántos minutos debe hornearse la lasaña en el horno. Según tu recetario, la lasaña debe estar en el horno durante 40 minutos:
 
    ```código
-   print(EXPECTED_BAKE_TIME)
+   EXPECTED_BAKE_TIME
    Salida: 40
    ```
 
@@ -41,9 +41,10 @@ Tienes cinco tareas, todas relacionadas con la preparación de tu receta.
    ```
 
 5. **Actualizar la receta con notas**  
-   Regresa a la receta y agrega "notas" en forma de docstrings en las funciones.
+   Regresa a la receta y agrega "notas" en forma de documentación en las funciones, en la manera en que lo implemente el lenguaje de tu preferencia.
+   Ejemplo: Los docsstrings para python.
 6. **Añade pruebas unitarias para cada una de las funciones que diseñes.**
-   Utiliza el módulo unittest para añadir las pruebas unitarias. Esto en el mismo archivo.
+   Utiliza el método que implementa el lenguaje que elegiste para crear las pruebas unitarias. Esto en el mismo archivo.
 
 ---
 
