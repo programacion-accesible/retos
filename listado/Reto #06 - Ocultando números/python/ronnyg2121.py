@@ -29,5 +29,9 @@ def sumar_divisores_partidos(valor, tamano):
 
     return suma_total
 
+try:
+    numero = input("Ingrese el número con dígitos pares")
+    print(sumar_divisores_partidos(numero, 2))
 
-print(sumar_divisores_partidos("341511", 2))
+except Exception as e:
+    print(f"A ocurrido un error inesperado. {e}")

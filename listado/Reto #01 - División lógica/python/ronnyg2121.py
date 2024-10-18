@@ -25,5 +25,13 @@ def divide_plus(dividendo, divisor):
         # finalmente, retornamos el cociente. Por ahora, nos entrega una división básica, ya que es entera.
     return cociente
 
+pregunta = ""
+while pregunta!= "salir":
+    try:
+        dividendo  = int(input("Ingrese el dividendo"))
+        divisor = int(input("Ingrese el divisor"))
+        print(divide_plus(dividendo, divisor))
+    except:
+        print("Por favor ingrese un número")
 
-print(divide_plus(100, 5))
+    pregunta = input("¿Desea continuar?")
