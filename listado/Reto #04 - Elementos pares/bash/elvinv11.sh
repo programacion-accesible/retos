@@ -16,8 +16,8 @@ done
 
 # Imprimimos los resultados y guardamos en el array $resultado los elementos que se repiten
 for elemento in "${!contador[@]}"; do
-if [[ ${contador[$elemento]} > 1 ]]; then
-resultado+=$elemento
+if [[ ${contador[$elemento]} > 1 && $((${contador[$elemento]} % 2)) = 0 ]]; then
+resultado+="\"${elemento}\", "
   echo "$elemento se repite ${contador[$elemento]} veces"
 fi
 done
@@ -39,5 +39,5 @@ exit 1
 else
 # finalmente imprimo el array que contiene los elementos que se repiten
 echo "Los elementos que introdujiste repetidos son:"
-echo " ${resultado[@]}"
+echo "${resultado[*]}"
 fi
