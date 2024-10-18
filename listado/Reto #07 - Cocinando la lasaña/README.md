@@ -13,7 +13,7 @@ Tienes cinco tareas, todas relacionadas con la preparación de tu receta.
 
    ```código
    print(EXPECTED_BAKE_TIME)
-   # Salida: 40
+   Salida: 40
    ```
 
 2. **Calcula el tiempo de horneado restante en minutos**  
@@ -21,7 +21,7 @@ Tienes cinco tareas, todas relacionadas con la preparación de tu receta.
 
    ```código
    bake_time_remaining(30)
-   # Salida: 10
+   Salida: 10
    ```
 
 3. **Calcula el tiempo de preparación en minutos**  
@@ -29,7 +29,7 @@ Tienes cinco tareas, todas relacionadas con la preparación de tu receta.
 
    ```código
    preparation_time_in_minutes(2)
-   # Salida: 4
+   Salida: 4
    ```
 
 4. **Calcular el tiempo total de cocción transcurrido (preparación + horneado) en minutos**  
@@ -37,7 +37,7 @@ Tienes cinco tareas, todas relacionadas con la preparación de tu receta.
 
    ```código
    elapsed_time_in_minutes(3, 20)
-   # Salida: 26
+   Salida: 26
    ```
 
 5. **Actualizar la receta con notas**  
