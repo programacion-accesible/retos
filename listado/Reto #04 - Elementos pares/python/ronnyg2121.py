@@ -10,7 +10,12 @@ def elementosPares(lista):
     return filtrada
 
 def main():
-    lista_ejemplo = ["a", "c", "c", 1, 31, 1, 2, "c", "c", "D", "D"]
-    print(elementosPares(lista_ejemplo))
+    # lista_ejemplo = ["a", "c", "c", 1, 31, 1, 2, "c", "c", "D", "D"]
+    try:
+        lista_ejemplo = input("Ingrese los valores separados por comas")
+        print(elementosPares(lista_ejemplo))
+    
+    except Exception as e:
+        print(f"Por favor ingrese una lista. {e}")
 
 main()
